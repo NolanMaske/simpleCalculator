@@ -49,3 +49,15 @@ while(true){
     if (isValid) results.push(Number(rowRes));
 }
       
+let min = '_', max = '_', avg = '_', total = '_';
+if (results.length >0){
+  total = results.reduce((a,b) => a+b, 0);
+  min = Math.min(...results);
+  max = Math.max(...results);
+  avg = total / results.length;
+
+document.write('<table>');
+document.write('<caption>Summary (Valid Results Only)</caption>');
+document.write('<tr><th>Minimum</th><th>Maximum</th><th>Average</th><th>Total</th></tr>');
+document.wirte('<tr><td>${min}</td><td>${max}</td><td>${avg}</td><td>${total}</td></tr>');
+document.write('</table>');
